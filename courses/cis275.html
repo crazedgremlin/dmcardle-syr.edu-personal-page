@@ -1,0 +1,171 @@
+<html>
+    <head>
+        <!-- configure and load Mathjax -->
+        <script type="text/x-mathjax-config">
+          MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+        </script>
+        <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+        <link rel="stylesheet" href="css/main.css" />
+    </head>
+
+    <body>
+        <h2>CIS 275: Discrete Math</h2>
+        <div>
+            Office Hours: 4-5pm MWTh
+        </div>
+        <div>
+            Recitations:
+            <ul>
+                <li>Wed from 10:35-11:30am in Shaffer 221D</li>
+                <li>Thurs from 11:00-11:55am in Link 103</li>
+            </ul>
+        </div>
+
+
+        <div id="notesDiv">
+            <h3>Notes</h3>
+            <ul>
+                <li>
+                    <a href="notes/20130905.html">9/5/13</a>
+                </li>
+            </ul>
+        </div>
+
+
+        <div id="logicRulesDiv">
+            <h3>Logical Rules</h3>
+
+            <p>
+                This is an <i>informal</i> and <i>incomplete</i> reference that
+                might be useful for logical proofs.
+            </p>
+            <p>
+                Note: if the math is not rendering, it is likely that you
+                loaded this page with an https connection, which does not allow
+                the libraries I am using to load correctly. <a
+                href="http://demcardl.mysite.syr.edu">Click here</a> to load
+                over normal http.
+            </p>
+
+            <div class="rule">
+                <h4>Tautology</h4>
+
+                A <b>tautology</b> is always true, for all possible
+                combinations of truth values for variables. The most basic
+                tautology is shown below, though more complicated formulae can
+                be proven to be tautological.
+
+                <ul>
+                    <li>$a \vee \neg a   \equiv   T$</li>
+                </ul>
+
+
+                <h4>Contradiction</h4>
+
+                Similar to a tautology, a <b>contradiction</b> is always false,
+                for all possible combinations of truth values for variables. 
+
+                <ul>
+                    <li>$a \wedge \neg a   \equiv   F$</li>
+                </ul>
+            </div>
+
+
+            <div class="rule">
+                <h4>Resolution</h4>
+                <ol>
+                    <li>$a \vee b$</li>
+                    <li>$\therefore b \vee c$</li>
+                </ol>
+            </div>
+
+            <div class="rule">
+                <h4>Disjunctive Syllogism</h4>
+                <ol>
+                    <li>$a \vee b$</li>
+                    <li>$\neg a$</li>
+                    <li>$\therefore b$</li>
+                </ol>
+            </div>
+
+            <div class="rule">
+                <h4>Idempotent Property</h4>
+                <ul>
+                    <li>$a \vee a \equiv a$</li>
+                    <li>$a \wedge a \equiv a$</li>
+                </ul>
+            </div>
+
+            <div class="rule">
+                <h4>Hypothetical Syllogism</h4>
+                <ol>
+                    <li>$a \rightarrow b$</li>
+                    <li>$b \rightarrow c$</li>
+                    <li>$\therefore a \rightarrow c$</li>
+                </ol>
+            </div>
+
+            <div class="rule">
+                <h4>De Morgan's Laws</h4>
+                <ul>
+                    <li>$\neg(a \wedge b) \equiv \neg a \vee \neg b$</li>
+                    <li>$\neg(a \vee b) \equiv \neg a \wedge \neg b$</li>
+                    <li>Generalization to quantifiers
+                        <ul>
+                            <li>$\neg ( \forall x . P(x) )   \equiv   \exists x . \neg P(x)$</li>
+                            <li>$\neg ( \exists x . P(x) )   \equiv   \forall x . \neg P(x)$</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="rule">
+                <h4>Implication</h4>
+                <ul>
+                    <li>$a \rightarrow b \equiv \neg a \vee b$</li>
+                </ul>
+            </div>
+
+            <div class="rule">
+                <h4>Commutativity</h4>
+                <ul>
+                    <li>$a \vee b  \equiv  b \vee a$</li>
+                    <li>$a \wedge b  \equiv  b \wedge a$</li>
+                </ul>
+            </div>
+            <div class="rule">
+                <h4>Associativity</h4>
+                <ul>
+                    <li>$(a \vee b) \vee c   \equiv   a \vee (b \vee c)$</li>
+                    <li>$(a \wedge b) \wedge c   \equiv   a \wedge (b \wedge c)$</li>
+                </ul>
+            </div>
+            <div class="rule">
+                <h4>Distributivity</h4>
+                <ul>
+                    <li>$a \wedge (b \vee c) \equiv   (a \wedge b) \vee (a \wedge c)$</li>
+                    <li>$a \vee (b \wedge c) \equiv   (a \vee b) \wedge (a \vee c)$</li>
+                </ul>
+            </div>
+
+            <div class="rule">
+                <h4>Modus Ponens</h4>
+                <ol>
+                    <li>$a \rightarrow b$</li>
+                    <li>$a$</li>
+                    <li>$\therefore b$</li>
+                </ol>
+            </div>
+
+            <div class="rule">
+                <h4>Modus Tollens</h4>
+                <ol>
+                    <li>$a \rightarrow b$</li>
+                    <li>$\neg b$</li>
+                    <li>$\therefore \neg a$</li>
+                </ol>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,25 @@
+body {
+    margin: 2em;
+}
+
+#logicRulesDiv {
+    width: 30em;
+}
+
+#logicRulesDiv ol, #logicRulesDiv ul {
+    margin-top:0;
+}
+
+#logicRulesDiv h4 {
+    margin-bottom:0;
+    padding-bottom:0.25em;
+}
+
+#logicRulesDiv .rule {
+    border-top: 1px solid black;
+    padding-left: 2em;
+}
+
+#logicRulesDiv b {
+    color: green;
+}
