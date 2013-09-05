@@ -1,0 +1,77 @@
+<html>
+    <head>
+        <!-- configure and load Mathjax -->
+        <script type="text/x-mathjax-config">
+          MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+        </script>
+        <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+        <link rel="stylesheet" type="text/css" href="../../css/main.css" />
+    </head>
+
+    <body>
+        <h2>Quantifiers and Translation</h2>
+        <p>
+            <div> Hockey referees play hockey iff they skate well </div>
+            <div> $\forall t \in U, \; (R(t) \rightarrow (H(t) \leftrightarrow S(t)))$ </div>
+        </p>
+        <p>
+            <div> Not to be confused with </div>
+            <div> $\forall t \in U, \; (H(t) \wedge R(t)) \leftrightarrow S(t)$ </div>
+        </p>
+
+        <h3>Nested Quantifiers</h3>
+        <p>
+
+            <ul>
+                <li>
+                    <div>For every SU student $y$, there is an SU professor $z$ such that $y$ likes $z$.</div>
+                    <div>$\forall y \in S, \; \exists z \in P, \; L(y,z)$</div>
+                </li>
+                <li>
+                    <div>There is a professor that every student likes.</div>
+                    <div>$\exists z \in P, \; \forall y \in S, \; L(y,z)$</div>
+                </li>
+            </ul>
+
+            In general...
+
+            <ul>
+                <li>
+                    <div>If you have different quantifiers, the order is very important.</div>
+                    <div>Example: $\forall x \in X, \; \exists y \in Y, \; D(x,y) \; 
+                            \not \equiv \; \exists y \in Y, \; \forall x \in X \; D(x,y) $</div>
+                </li>
+                <li>
+                    <div>If you have the same quantifier, the order does not matter.</div>
+                    <div>Example: $\forall x \in X, \; \forall y \in Y, \; D(x, y) \;
+                            \equiv \; \forall y \in Y, \; \forall x \in X \; D(x, y) $</div>
+                </li>
+            </ul>
+        </p>
+
+        <h3>Two Nested Existentials Are Not Necessarily Different</h3>
+        <p>
+            <div>
+            $\exists x \in V, \; \exists y \in P, \exists z \in P, (C(x) \wedge O(y, x) \wedge O(z, x) \wedge y \neq z)$
+            </div>
+
+            <div>
+                There is a vehicle $x$, and two people $y$, $z$, such that that
+                $x$ is a car, $y$ owns $x$, $z$ owns $x$, and $y$ and $z$ are
+                different people.
+            </div>
+            <div>
+                Colloquially: there is a car owned by at least two people.
+            </div>
+
+            <p>
+                If we did not say <b>$y \neq z$</b>, we might inadvertently be
+                talking about a car owned by one person named Tom because the
+                quantifiers would select $y = \text{Tom}$ and $z = \text{Tom}$.
+            </p>
+        </p>
+
+    </body>
+
+</html>
