@@ -20,9 +20,29 @@ body {
 
 #logicRulesDiv .rule {
     border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+
     padding-left: 2em;
+    padding-right: 2em;
+    padding-bottom: 1em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+#logicRulesDiv .rule p {
+    padding-bottom:0;
+    padding-top:0;
+    margin-bottom: 0.25em;
+    margin-top: 0.25em;
 }
 
 #logicRulesDiv b {
     color: green;
+}
+
+.warning {
+    border: 1px dotted red;
+    padding: .5em;
 }
