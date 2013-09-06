@@ -1,10 +1,12 @@
 body {
     margin: 2em;
-    width:40em;
+    width:45em;
+    font-family: Helvetica, sans-serif;;
+    font-size:11pt;
 }
 
 #logicRulesDiv {
-    width: 30em;
+    width: 35em;
 }
 
 #logicRulesDiv ol, #logicRulesDiv ul {
