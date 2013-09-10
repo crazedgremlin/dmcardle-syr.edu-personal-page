@@ -1,0 +1,111 @@
+<html>
+    <head>
+        <!-- configure and load Mathjax -->
+        <script type="text/x-mathjax-config">
+          MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+        </script>
+        <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+        <link rel="stylesheet" type="text/css" href="../../css/main.css" />
+    </head>
+
+    <body>
+
+        <h2>Quiz Today</h2>
+        <p>
+            <ul>
+                <li>Anything can be proven from a contradiction
+                   
+                    <p> 
+                        <div>$
+                        
+                        p \rightarrow q \\
+                        \neg(p \rightarrow q) \\
+                        \therefore \neg q
+
+                        $</div>
+                    </p>
+                
+                    <p>(You could conclude anything from these two premises and
+                    it would still be a valid argument.)</p>
+
+                    <p>More generally,</p>
+
+                    <p> 
+                        <div>
+                            $
+                            
+                            H_1\\
+                            H_2 \\
+                            \vdots \\
+                            H_k \\
+                            \above 1pt \therefore C
+                            
+                            $
+                        </div>
+                    </p>
+                    <p>
+                        Is valid provided that every interpretation (in
+                        propositional logic, an interpretation is a row in
+                        truth table) that makes every $H_i$ true also makes C
+                        true. If there is no row in the truth table that makes
+                        $H_i$ true, $C$ is vacuously true.
+                    </p>
+                </li>
+            </li> 
+
+
+            <li>
+                <p>
+                    Find interpretation (nonempty set $U$) that makes $\forall
+                    t \in U, \, ((R(t) \wedge S(t)) \rightarrow Q(t))$ true.
+                    Start with a one-element set.
+                </p>
+                <p>
+                    <div>
+                        Define $U = \{ \star \}$ (using symbol so we don't think about numbers).
+                    </div>
+                    <div>
+                        Define $R(\star) = S(\star) = Q(\star) = T$.
+                    </div>
+                </p>
+                <p>
+                    <div>
+                        Therefore, $(R(\star) \wedge S(\star)) \rightarrow
+                        Q(\star)$ is true.
+                    </div>
+                    <div>
+                        Hence, $\forall t \in U, \, (R(\star) \wedge S(\star))
+                        \rightarrow Q(\star)$.
+                    </div>
+                </p>
+                
+            </li>
+
+
+            <li>Recap of predicate logic...</li>
+
+            <li>
+                How to show an argument form is not valid:
+                
+                $
+                    \exists x \in U, \, (P(x) \rightarrow Q(x)) \\
+                    \exists y \in U, \, P(y) \\
+                    \therefore \exists w \in U, Q(w)
+                $
+
+                <p>
+                    Find a specific nonempty set U and interpretations for P
+                    and Q such that all premises are true and the conclusion is
+                    false.
+                </p>
+
+                <p>
+                    Example: Let $U = \{1,2\}$, and let $P(1) = Q(1) = Q(2) = F$ and $P(2) = T$.
+                </p>
+            </li>
+        </p>
+
+    </body>
+
+</html>
