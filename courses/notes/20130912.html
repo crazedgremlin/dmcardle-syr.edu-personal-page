@@ -1,0 +1,133 @@
+<html>
+    <head>
+        <!-- configure and load Mathjax -->
+        <script type="text/x-mathjax-config">
+          MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+        </script>
+        <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+        <link rel="stylesheet" type="text/css" href="../../css/main.css" />
+
+        <style>
+            .problem {
+                border: 1px solid black;
+                padding: 1em;
+                margin: 1em;
+            }
+        </style>
+    </head>
+
+    <body>
+
+        <div>
+
+            <div class="problem"> 
+                Example HW Problem:
+                <p>
+                    $
+                    \exists x \in U, P(x) \\
+                    \exists x \in U, Q(x) \\
+                    \therefore \exists x \in U, (P(x) \wedge Q(x))
+                    $
+                </p>
+
+                <p>
+                    To show it's <b>invalid</b>, we want to show that 
+                    <p>
+                        $
+                        \eqalign{
+                            \exists x \in U, P(x) & \equiv \color{green}{T} \\
+                            \exists x \in U, Q(x) & \equiv \color{green}{T}\\
+                            \therefore \exists x \in U, (P(x) \wedge Q(x)) & \equiv \color{red}{F}
+                        }
+                        $
+                    </p>
+                </p>
+
+                Remember that
+                $$
+                    \eqalign{
+                        \exists x \in U, (P(x) \wedge Q(x)) & \equiv \color{red}{F} \\
+                        \neg ( \exists x \in U, (P(x) \wedge Q(x))) & \equiv \color{green}{T} \\
+                    }
+                    \\
+                    \eqalign{
+                        \forall x & \in U, \neg(P(x) \wedge Q(x)) \\
+                        \forall x & \in U, \neg P(x) \vee \neg Q(x)
+                    }
+                $$
+
+                
+                In summary, if you can show that either $P$ is false or $Q$ is
+                false for each $x \in U$, you have shown that the argument form is
+                invalid.
+
+            </div>
+
+
+
+            <h1> New Rules </h1>
+
+            <h2>Universal Instantiation</h2>
+            $
+                \forall x \in U, p(x) \\
+                a \in U \\
+                \therefore p(a)
+            $
+
+
+                
+            <h3>Example</h3>
+            $
+                \forall n \in W, (P(n) \rightarrow Q(n)) \\
+                5 \in W \\
+                P(5) \\
+                \therefore Q(5)
+            $
+
+
+
+            <h2>Universal Generalization</h2>
+
+
+            <ul>
+                <li>Take an arbitrary element $a \in U$</li>
+                <li>Establish that $p(a)$ holds</li>
+            </ul>
+
+            The conclusion $\forall x \in U, p(x)$ holds.
+
+            <h3>Example</h3>
+
+            Show that the following is a valid argument:
+            <p>
+                $
+                    \forall x \in U, (P(x) \rightarrow Q(x)) \\
+                    \forall x \in U, P(x) \\
+                    \therefore \forall x \in U, Q(x)
+                $
+            </p>
+
+            <h2>Existential Generalization</h2>
+
+            $
+                p(a) \\
+                a \in U \\
+                \therefore \exists a \in U, p(a)
+            $
+
+            <h2>Existential Instantiation</h2>
+            <p>
+                $
+                    \exists x \in U, P(x)\\
+                    \therefore P(a) 
+                $
+            </p>
+
+            Note that $a$ must be a fresh variable, not previously used in the proof.
+
+        </div>
+
+    </body>
+
+</html>
