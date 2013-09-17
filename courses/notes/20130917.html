@@ -1,0 +1,248 @@
+<html>
+    <head>
+        <!-- configure and load Mathjax -->
+        <script type="text/x-mathjax-config">
+          MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+        </script>
+        <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+        <link rel="stylesheet" type="text/css" href="../../css/main.css" />
+
+        <style>
+            .problem {
+                border: 1px solid black;
+                padding: 1em;
+                margin: 1em;
+            }
+        </style>
+    </head>
+
+    <body>
+
+        <h1>Sets (1.4 in text)</h1>
+        
+        <p>
+            Already seen
+
+            <ul>
+                <li>
+                    $x \in A$ -- $x$ is an element of set $A$
+                </li>
+                <li>
+                    $x \not \in A$ -- $x$ is NOT an element of set $A$
+                    <div>
+                        Equivalently, $\neg ( x \in A )$
+                    </div>
+                </li>
+                <li>
+                    Universal set (universe) $U$ -- Set of all elements under
+                    consideration.
+                </li>
+            </ul>
+        </p>
+
+
+        <div>
+            <p>
+                <b>Definition</b>: Let $A$ and $B$ be sets whose elements come from $U$.
+            </p>
+            <p>
+                <ul>
+                    <li>
+                        $A$ equals $B$ (written $A = B$) IFF
+                        $$\forall x \in U, (x \in A \leftrightarrow x \in B)$$
+                    </li>
+
+                    <li>
+                        $A$ is a subset of $B$ (written $A \subseteq B$) IFF
+                        $$\forall x \in U, (x \in A \rightarrow x \in B)$$
+                    </li>
+                    
+                    <li>
+                        $A$ is a proper subset of $B$ (written $A \subset B$) IFF
+                        $$(A \subseteq B) \wedge (A \neq B)$$
+                    </li>
+                </ul>
+            </p>
+        </div>
+
+        <div>
+            <p>
+                <b>Examples</b>
+            </p>
+            <p>
+                $\{ 1, 2, 3, 4\} = \{ 3, 1, 4, 2 \}$ because order does not matter for sets
+            </p>
+            
+            <p>
+                Also, implicitly, only a single copy of an element exists in a set, so $\{1\} = \{1, 1\}$.
+            </p>
+
+            <p>
+                $\{1, 4\} \subseteq \{1, 2, 3, 4\}$. Also, note that it is a proper subset: $\{1, 4\} \subset \{1, 2, 3, 4\}$.
+            </p>
+            <p>
+                $\{1, 2, 3, 4\} \not \subseteq \{1, 2, 3, 4\}$
+            </p>
+
+            <p>
+                Curly braces are notation for sets.  Parentheses, e.g. $(1, 2,
+                3, 4)$ can mean many things, but never mean a set. Later this
+                will be imporant because we will talk about sets of things that
+                have some structure themselves, sets of things that may not be
+                sets themselves.
+            </p>
+
+        </div>
+
+        <div>
+            <b>Fact</b>
+            <p>
+                The empty set can be written as $\{\}$ or $\emptyset$.
+            </p>
+            <p>
+                For every set A:
+                <ol>
+                    <li>$\emptyset \subseteq A$</li>
+                    <li>$A \subseteq A$</li>
+                </ol>
+            </p>
+        </div>
+
+
+        <div>
+            <b>Some Useful Sets</b>
+
+            <p>
+                <ul>
+                    <li>
+                        $\mathbb{Z}$ is the set of integers
+                    </li>
+                    <li>
+                        $\mathbb{R}$ is the set of real numbers
+                    </li>
+                    <li>
+                        $\mathbb{N} = \{ n : n \in \mathbb{Z} \wedge n \geq 0 \}$ is the set of natural numbers
+                    </li>
+                    <li>
+                        $\mathbb{Z}^+ = \{ n : n \in \mathbb{Z} \wedge n &gt; 0 \}$ is the set of positive integers
+                    </li>
+                    <li>
+                        $\mathbb{Z}^- = \{ n : n \in \mathbb{Z} \wedge n &lt; 0 \}$ is the set of negative integers
+                    </li>
+                    <li>
+                        $\mathbb{R}^+ = \{ n : n \in \mathbb{R} \wedge n &gt; 0 \}$ is the set of positive real numbers 
+                    </li>
+                    <li>
+                        $\mathbb{R}^- = \{ n : n \in \mathbb{R} \wedge n &lt; 0 \}$ is the set of negative real numbers 
+                    </li>
+                </ul>
+            </p>
+        </div>
+
+
+        <div>
+            <b>Examples</b>
+
+            <p>
+                Note that $\mathbb{Z}^+ \subset \mathbb{N} \subset \mathbb{Z} \subset \mathbb{R}$
+            </p>
+            <p>
+                $\mathbb{N} \not \subseteq \mathbb{R}^+$
+            </p>
+        </div>
+
+        <h2>Operations on Sets</h2>
+
+        <div>
+            We've introduced a new <i>type</i> (sets), so here are some operations we
+            can perform on that type as well as other definitions.
+
+            <p>
+                <b>Definition</b>: Suppose $A$ and $B$ are subsets of some
+                universal set $U$.
+
+                <p>
+
+                    <ul>
+                        <li>
+                            The <b>complement</b> of $A$ (written $A^c$) is defined by:
+                            $$\forall x \in U, (x \in A^c \leftrightarrow x \not \in A)$$
+                        </li>
+                        <li>
+                            The <b>union</b> of $A$ and $B$ (written $A \cup B$) is defined by:
+                            $$\forall x \in U, (x \in A \cup B \leftrightarrow (x \in A \vee x \in B))$$
+                        </li>
+                        <li>
+                            The <b>intersection</b> of $A$ and $B$ (written $A \cap B$) is defined by:
+                            $$\forall x \in U, (x \in A \cap B \leftrightarrow (x \in A \wedge x \in B))$$
+                        </li>
+                        <li>
+                            The set <b>difference</b> of A and B (written $A \backslash B$) is defined by:
+                            $$\forall x \in U, (x \in A \backslash B \leftrightarrow (x \in A \wedge x \not \in B))$$
+                        </li>
+                        <li>
+                            Two sets $A$ and $B$ are <b>disjoint</b> IFF
+                            $$A \cap B = \emptyset$$
+                        </li>
+                        <li>
+                            The <b>Cartesian product</b> of sets $A$ and $B$ (written $A \times B$) is:
+                            $$ A \times B = \{ (x, y) : x \in A \wedge y \in B \}$$
+
+                            where each of the items $(x, y)$ is an ordered pair.
+
+                            <p>
+                                Example: $\{ 2, 4, 6\} \times \{2, 7\} = \{ (2, 2), (2, 7), (4, 2), (4, 7), (6, 2), (6, 7) \}$
+                            </p>
+                        </li>
+
+                        <li>
+                            The <b>powerset</b> of a set $A$, written $\mathscr{P}(A)$, is the set of subsets of A.
+                            $$\mathscr{P}(A) = \{ B : B \subseteq A\}$$
+
+                            That is,
+                            $$\forall B \in U, (B \in \mathscr{P}(A) \leftrightarrow B \subseteq A)$$
+
+                            Example:
+                            $$\mathscr{P}( \{a, b, c\}) = \{ \{a\}, \{b\}, \{c\},
+                                \{a, b\}, \{b,c\}, \{a, c\}, \{a, b, c\}, \emptyset \}$$
+                        </li>
+                        <li>
+                            Informal definitions
+
+                            <ul>
+                                <li>
+                                    The <b>Cardinality</b> of a set A, written $|A|$,
+                                    is the number of elements in $A$.
+                                </li>
+                                <li>
+                                    A set $A$ is finite IFF $|A|$ is a natural number.
+                                </li>
+                                <li>
+                                    Suppose $A$ and $B$ are finite sets.
+
+                                    <ul>
+                                        <li>$|\mathscr{P}(A)| = 2^{|A|}$</li>
+                                        <li>$|A \cup B| \leq |A| + |B|$</li>
+                                        <li>$|A\cap B| \leq |A|$</li>
+                                        <li>$|A\cap B| \leq |B|$</li>
+                                        <li>$|A \times B| = |A| \cdot |B|$ (The
+                                        operation on the left side of the
+                                        inequality is Cartesian product. The
+                                        operation on the right is
+                                        multiplication.</li>
+                                        <li>
+                                            $|A \backslash B| \leq |A|$
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </p>
+            </p>
+        </div>
+
+    </body>
+
+</html>
