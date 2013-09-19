@@ -1,0 +1,209 @@
+<html>
+    <head>
+        <!-- configure and load Mathjax -->
+        <script type="text/x-mathjax-config">
+          MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+        </script>
+        <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+        <link rel="stylesheet" type="text/css" href="../../css/main.css" />
+
+        <style>
+            .block {
+                border: 1px solid black;
+                padding: 0 1em 1em 1em;
+                margin: 1em;
+            }
+        </style>
+    </head>
+
+    <body>
+        
+        <!--
+        LaTeX cheat sheet
+            \mathcal{P} gives powerset P
+            \mathbb{x} gives blackboard font 
+        -->
+
+        <div class="block">
+        
+            <h2>Quantifier Review</h2>
+
+            <div>
+                To make $\exists y \in U, P(y)$ <b
+                style="color:green">true</b>, you only need a single $a \in U$
+                such that $P(a)$ is <b style="color:green">true</b>.
+            </div>
+            <div>
+                To make $\exists y \in U, P(y)$ <b style="color:red">false</b>,
+                you must show every element makes $P(a)$ <b
+                style="color:red">false</b>.
+            </div>
+
+
+            <p>
+                <div>
+                    Example: show $\exists y \in U, (Q(y)\rightarrow R(y))$ is <b
+                    style="color:red">false</b> and $U= \{\text{red}, \text{blue},
+                    \text{green} \}$.
+                </div>
+                <div>
+                    You must show 
+                    $$
+                        \neg \left[Q(\text{red}) \rightarrow R(\text{red}) \right] 
+                        \wedge \neg \left[Q(\text{blue}) \rightarrow R(\text{blue})\right] 
+                        \wedge \neg \left[Q(\text{green}) \rightarrow R(\text{green})\right] 
+                    $$
+                </div>
+                <div>
+                    Therefore, $\forall y \in U, \neg \left( Q(y) \rightarrow R(y) \right)$.
+                </div>
+
+            </p>
+
+            <hr>
+
+            <div>
+                To make $\forall y \in U, P(y)$ is <b style="color:green">true</b>,
+                you need to show that every $w \in U$ makes $P(w)$ <b
+                style="color:green">true</b>.
+            </div>
+            <div>
+                To make $\forall y \in U, P(y)$ is <b style="color:red">false</b>,
+                you need to show that a single $w \in U$ makes $P(w)$ <b
+                style="color:red">false</b>.
+            </div>
+
+            <hr>
+
+            <div>
+                <b>Universal Negation</b>:
+                $\neg \left( \forall y \in U, P(y) \right) \equiv \exists y \in U, \neg P(y)$
+            </div>
+            <div>
+                <b>Existential Negation</b>:
+                $\neg \left( \exists y \in U, P(y) \right) \equiv \forall y \in U, \neg P(y)$
+            </div>
+
+        </div> <!-- </ .block > -->
+
+        <h1>Writing Math-Style Proofs</h1>
+
+        <div>
+            Symbolic logic provides a backdrop for understanding how
+            mathematicians prove things, as well as their lingo
+        </div>
+
+        <ul>
+            <li>
+                <b>Definition</b>: a statement that stipulates the meaning of
+                a new term, symbol, or object. A definition specifies precisely
+                what is meant by the term and serves as the sole authority of
+                what the term means.
+
+                <div>
+                    Example:
+
+                    <p style="color:blue">
+                        <b>Definition</b>: An integer $n$ is even if there exists an integer $k$ such that $n = 2k$.
+                    </p>
+                </div>
+
+                <p>
+                    [Object] x is [defined term] if [defining property about x].
+                </p>
+            </li>
+
+
+            <li>
+                <b>Postulate</b> (also called "axiom") is a statement assumed
+                to be true, without proof. Serve as starting points from which
+                other statements can be derived.
+            </li>
+
+
+            <li>
+                <b>Theorem</b>: statement that follows logically from axioms or
+                other statements that have already been established. To be
+                called a theorem, a statement must have a proof.  A
+                <i>lemma</i> is a theorem used to prove another theorem.
+            </li>
+
+            <li>
+                <b>Claim</b>: statement that we intend to prove.
+            </li>
+            <li>
+                <b>Conjecture</b>: a statement that is thought to be true but has not been proved
+            </li>
+            <li>
+                A <b>counterexample</b> to a statement is a value that shows
+                the statement to be false.
+            </li>
+        </ul>
+
+
+        <h2>Mathematical Proofs</h2>
+
+        <div>
+            <ul>
+                <li>The results tend to be expressed in paragraphs</li>
+                <li>May not spell out all the details (depends on audience)</li>
+                <li>Variables tend to be inplicitly universally quantified,
+                unless specified otherwise</li>
+            </ul>
+        </div>
+
+        <div>
+            Every proof has certain features
+
+            <ul>
+                <li>A collection of hypotheses (or premises) $H_1, H_2, \ldots, H_k$</li>
+                <li>desired conclusion $C$</li>
+                <li>need to show that hypotheses when taken together logically imply conclusion:
+                    $$(H_1 \wedge H_2 \wedge \ldots \wedge H_k) \rightarrow C$$
+                </li>
+
+            </ul>
+
+            For the time being, we'll stick to <b>direct proofs</b>.
+
+
+            <h3>Format for Proofs</h3>
+
+            <ol>
+                <li>Explicitly specify what you're trying to prove
+                
+                    <div style='color:blue'>
+                        Claim: For all integers $n$, if $n$ is even, then $n+1$ is odd.
+                    </div>
+                </li>
+                <li>Label start of proof and indicate method
+                    <div style='color:blue'>
+                        Proof: (direct)
+                    </div>
+                </li>
+                <li>Explicitly state any initial assumptions / constraints
+                    <div style='color:blue'>
+                        Consider an arbitrary integer $m$ such that $m$ is even
+                    </div>
+                </li>
+                <li>
+                    Explicitly state what you need to show, unwrapping the stopping condition as necessary
+                    <div style='color:blue'>
+                        Need to show: $m+1$ is odd. That is, there exists an integer $k$ such that $m+1 = 2k+1$
+                    </div>
+                </li>
+                <li>Fill in the gaps between steps 3 and 4 with the heart of the proof</li>
+                <li>Explicitly wrap up the proof
+                    <div style='color:blue'>
+                        Because $m$ was arbitrary, the claim is true
+                    </div>
+                </li>
+            </ol>
+        </div>
+
+
+
+    </body>
+
+</html>
