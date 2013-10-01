@@ -1,0 +1,63 @@
+<html>
+    <head>
+        <!-- configure and load Mathjax -->
+        <script type="text/x-mathjax-config">
+          MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+        </script>
+        <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+        <link rel="stylesheet" type="text/css" href="../../css/main.css" />
+
+        <style>
+            .block {
+                border: 1px solid black;
+                padding: 0 1em 1em 1em;
+                margin: 1em;
+            }
+        </style>
+    </head>
+
+    <body>
+        
+        <!--
+        LaTeX cheat sheet
+            \mathcal{P} gives powerset P
+            \mathbb{x} gives blackboard font 
+        -->
+
+        <b style="color:red">Not on Exam</b>
+
+        <h1>Mathematical Proofs: The Big Picture</h1>
+
+        <h2> Proof by Contraposition </h2>
+
+        <p>
+            A conditional $q \rightarrow r$ is logically equivalent to its
+            <b>contrapositive</b> $\neg r \rightarrow \neg q$.
+        <p>
+
+        <p>
+            To show $$H_1 \wedge H_2 \wedge \ldots \wedge H_k \rightarrow C$$
+            you must show that the contrapositive is true:
+            $$\neg C \rightarrow \neg (H_1 \wedge H_2 \wedge \ldots \wedge H_k )$$
+        </p>
+
+
+
+        <h2>Proof by Contradiction</h2>
+
+        $$
+            \begin{align}
+                &p \rightarrow \text{FALSE}\\
+                &\therefore \neg p
+            \end{align}
+        $$
+
+
+        To show $H_1 \wedge H_2 \wedge \ldots \wedge H_k \rightarrow C $
+
+        show that $$(H_1 \wedge H_2 \wedge \ldots \wedge H_k \wedge \neg C) \rightarrow \text{FALSE} $$
+
+    </body>
+
+</html>
