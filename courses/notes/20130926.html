@@ -1,0 +1,92 @@
+<html>
+    <head>
+        <!-- configure and load Mathjax -->
+        <script type="text/x-mathjax-config">
+          MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+        </script>
+        <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+        <link rel="stylesheet" type="text/css" href="../../css/main.css" />
+
+        <style>
+            .block {
+                border: 1px solid black;
+                padding: 0 1em 1em 1em;
+                margin: 1em;
+            }
+        </style>
+    </head>
+
+    <body>
+        
+        <!--
+        LaTeX cheat sheet
+            \mathcal{P} gives powerset P
+            \mathbb{x} gives blackboard font 
+        -->
+
+        <h3>Question 1 (h)</h3>
+
+        Let $a = \emptyset$ and $b = \{ \emptyset \}$
+       $$   
+       \begin{align}
+           \mathcal{P} \left( \{ \emptyset, \{ \emptyset \} \} \right) &= \mathcal{P}(\{ a, b \}) \\
+           &= \{ \emptyset, \{ a \},\{ b \},\{a, b \}   \} \\
+           &= \{ \emptyset, \{ \emptyset \},  \{ \{ \emptyset \} \},  \{ \emptyset, \{ \emptyset \} \} \}
+       \end{align}
+       $$
+
+       <h3>Empty Sets: $\in$ vs $\subseteq$ </h3>
+
+        <ul>
+            <li> $\emptyset \subseteq A$ for any set A </li>
+            <li> $\emptyset \in A$ if and only if A contains the empty set as an element </li>
+        </ul>
+        <p>
+            <b>Example:</b>
+            <div>
+                $\emptyset \in \{ 1, 2, 3, \emptyset \}$, but $\emptyset \not \in \{1, 2, 3\}$
+            </div>
+        </p>
+
+        <hr>
+
+        <p>
+            $$
+            \begin{align}
+                p \leftrightarrow q &\equiv (p \rightarrow q) \wedge (q \rightarrow p)\\
+            \end{align}
+            $$
+        </p>
+
+        <p >
+            To prove a statement of the form $p \leftrightarrow q$, it suffices to show the following.
+
+            <ol>
+                <li> $p \rightarrow q$</li>
+                <li>$q \rightarrow p$</li>
+            </ol>
+
+
+            <p>
+                <p>
+                    <u>Claim</u>: Let $A, B$ be sets. Then $A = B$ <b>if and only if</b> $A \subseteq B$ and $B \subseteq A$.
+                </p>
+                <p>
+                    <u>Proof</u>: (direct)
+
+                    <div>
+                        It suffices to prove the following two subclaims:
+
+                        <ol>
+                            <li>If $A = B$, then $A \subseteq B$ and $B \subseteq A$</li>
+                            <li>If $A \subseteq B$ and $B \subseteq A$, then $A = B$</li>
+                        </ol>
+                    </div>
+                </p>
+            </p>
+        </p>
+
+    </body>
+
+</html>
