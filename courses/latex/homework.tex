@@ -1,0 +1,60 @@
+%  LaTeX document template for CIS 275 homework assignments.
+%  Dan McArdle
+%  10-14-2013
+
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amsthm,amssymb}
+
+\begin{document}
+
+% Boilerplate for creating a header
+\title{Weekly Homework \#1}
+\author{Dan McArdle\\
+CIS 275 -- Discrete Math}
+\date{Oct 14, 2013}
+\maketitle  % without this line, the header would not be generated
+
+
+% We're going to be writing a lot of backslashes, so let's avoid writing \backslash a lot by creating a macro.
+\newcommand{\bs}{\backslash}
+
+\section*{Problem 5}
+
+\paragraph{Claim:} Let $A$, $B$, $C$ be sets. Then, $(A\bs B)\bs C \subseteq (A\bs C)\bs (B\bs C)$.
+
+\paragraph{Proof: (direct)}
+
+It is sufficient to show the following two subclaims.
+\begin{enumerate}
+	\item $(A\bs B)\bs C \subseteq (A\bs C)\bs (B\bs C)$
+	\item $(A\bs B)\bs C \supseteq (A\bs C)\bs (B\bs C)$
+\end{enumerate}
+
+\paragraph{Subclaim 1:} $(A\bs B)\bs C \subseteq (A\bs C)\bs (B\bs C)$
+
+Let $x$ be an arbitrary element in $(A\bs B)\bs C$.
+
+It follows that $x\in A\bs B$ and $x \not \in C$.
+
+Since $x \in A\bs B$, it follows that $x \in A$ and $x \not \in B$.\\
+
+
+Since we know $x \in A$ and $x \not \in C$, it follows that $x \in A \bs C$.
+
+Since we know that $x \not \in B$, it follows that $x \not \in B\bs C$.\\
+
+
+Because $x \in A\bs C$ and $x \not \in B \bs C$, we have shown $x \in (A \bs C) \bs (B \bs C)$.
+
+Therefore, since $x$ was an arbitrary element in $(A\bs B)\bs C)$, we have shown that $(A\bs B)\bs C \subseteq (A\bs C)\bs (B\bs C)$.  Subclaim 1 is true.
+
+
+
+\paragraph{Subclaim 2:} $(A\bs B)\bs C \supseteq (A\bs C)\bs (B\bs C)$
+[This is where we would prove that subclaim 2 is true. I leave it as an exercise for the reader!]
+
+\paragraph{}
+Because subclaims 1 and 2 are true, our original claim is true.
+
+\end{document}
