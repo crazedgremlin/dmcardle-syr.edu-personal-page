@@ -1,0 +1,176 @@
+<html>
+    <head>
+        <!-- configure and load Mathjax -->
+        <script type="text/x-mathjax-config">
+          MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+        </script>
+        <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+        <link rel="stylesheet" type="text/css" href="../../css/main.css" />
+
+        <style>
+            .block {
+                border: 1px solid black;
+                padding: 0 1em 1em 1em;
+                margin: 1em;
+            }
+        </style>
+    </head>
+
+    <body>
+
+        <h1>$f$unctions</h1>
+
+        <p>
+            Let $X$, $Y$ be sets. A <b>function</b> $f$ from $X$ to $Y$
+            (written $f: X \rightarrow Y$) is a relation from $X$ to $Y$ s.t.
+            for each element $x\in X$, there is exactly one $y \in Y$  such
+            that $(x,y)\in f$.
+        </p>
+        <p>
+            [We will often write $f(x)=y$ to indicate $(x,y)\in f$.]
+        </p>
+        <p>
+            "Function $f$ maps $x$ to $y$."
+        </p>
+
+        <h2>Example</h2>
+        <p>
+            A gradebook $g$.
+
+            <table>
+                <tr>
+                    <th>Students</th>
+                    <th>Grades</th>
+                </tr>
+                <tr>
+                     <td>Smith</td><td>A</td>
+                </tr>
+                <tr>
+                     <td>Jones</td><td>B</td>
+                </tr>
+                <tr>
+                     <td>Blake</td><td>C</td>
+                </tr>
+                <tr>
+                     <td>Carter</td><td>D</td>
+                </tr>
+                <tr>
+                    <td></td><td>F</td>
+                </tr>
+            </table>
+
+            { (Smith, B), (Jones, A), (Blake, B), (Carter, D) }
+        </p>
+
+        <h2>Definitions</h2>
+        <p>
+            Suppose $f : X \rightarrow Y$.
+
+            <ul>
+                <li>The <b>domain</b> of $f$ is $X$</li>
+                <li>The <b>codomain</b> of $f$ is $Y$</li>
+                <li>Suppose $f(a)=b$
+                    <ul>
+                        <li> $b$ is the <b>image</b> of $a$</li>
+                        <li> $a$ is a <b>preimage</b> of b </li>
+
+                    </ul>
+                </li>
+                <li>The <b>range</b> of $f$ is the set of all images of
+                elements of $X$.</li>
+            </ul>
+
+            <h3>Types of Functions</h3>
+
+            <ul>
+                <li>$f$ is <b>injective</b> (one-to-one, 1-1) if, for all $x_1, x_2 \in X,\\
+                (f(x_1) = f(x_2)) \rightarrow (x_1 = x_2)$.
+
+                <p>
+                    In other words, each domain element maps to a different codomain element. Consider the contrapositive of the definition given above: $(x_1 \neq x_2) \to (f(x_1) \neq f(x_2))$.
+                </p>
+                
+                </li>
+
+                <li>
+                    $f$ is <b>surjective</b> (onto) iff, for all $y \in Y,\\
+                    \exists x \in X, \; f(x) = y$.
+
+                    <p>
+                        In other words, every element in the codomain has
+                        something in the domain mapping to it.
+                    </p>
+                    <p>
+                        In more different words, $f$ is surjective iff its
+                        codomain and range are the same set.
+                    </p>
+                </li>
+
+                <li>$f$ is <b>bijective</b> iff it is both 1-1 and onto</li>
+
+                <li>
+                    <span style="color:red">
+                        <p>
+                            <b>Be careful!</b>
+                        </p>
+                        A <b>1-1 function</b> is not the same thing as a <b>1-1
+                            correspondence</b>.  A 1-1 correspondence means
+                        there is a bijection. 
+                    </span>
+                </li>
+            </ul>
+
+
+            <h3>Operations on Functions</h3>
+            Suppose $f : X \to Y$ and $g : Y \to Z$.
+            <ul>
+                <li>The <b>composition</b> of $f$ and $g$ is
+                $$g \circ f : X \to Z$$
+                defined by $$(g \circ f) a = g ( f ( a ) )$$
+
+                    <p>
+                        Associativity of composition: $f_7 \circ (f_6 \circ f_5) = (f_7 \circ f_6) \circ f_5$
+                    </p>
+
+                </li>
+
+                <li>
+                    Two functions $f,g: X \to Y$ are <b>equal</b> ($f = g$) iff
+                    $\forall a \in X, f(a) = g(a)$
+                </li>
+            </ul>
+        </p>
+
+        <hr>
+
+        <p>
+            <p>
+                <b>Theorem: </b>  Let $f:X\to Y$, $g : Y \to Z$, $h : Z \to W$
+                be functions. Then $h \circ (g \circ f) = (h \circ g ) \circ
+                f$.
+            <p>
+
+
+            <p>
+                <b>Proof (direct):</b>
+                [NTS: for all $a \in X$, $h \circ (g \circ f) = (h \circ g ) \circ f$]
+
+                Consider arbitrary $a \in X$. We see by the definition of $\circ$ that 
+
+                $$
+                    \begin{align}
+                    (h \circ (g \circ f)) (a) &= h( (g \circ f) a)\\
+                    &= h(g(f(a))) \\
+                    &= (h \circ g) (f(a)) \\
+                    &= ((h \circ g) \circ f) (a)
+                    \end{align}
+                    $$
+
+                Because $a$ was arbitrary, the theorem is true.
+            </p>
+        </p>
+
+    </body>
+
+</html>
