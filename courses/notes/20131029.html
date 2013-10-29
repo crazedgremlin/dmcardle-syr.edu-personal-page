@@ -1,0 +1,143 @@
+<html>
+    <head>
+        <!-- configure and load Mathjax -->
+        <script type="text/x-mathjax-config">
+          MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+        </script>
+        <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+        <link rel="stylesheet" type="text/css" href="../../css/main.css" />
+
+        <style>
+            .block {
+                border: 1px solid black;
+                padding: 1em 1em 1em 1em;
+                margin: 1em;
+            }
+        </style>
+    </head>
+
+    <body>
+
+        <h1>Principle of Mathematical Induction</h1>
+
+        <i>(not to be confused with Philosophical Induction)</i>
+
+        <p>
+            For extra reading on induction, see the first chapter of <a
+            href="http://en.wikipedia.org/wiki/The_Art_of_Computer_Programming">The
+            Art of Computer Programming</a> by Donald Knuth.
+        </p>        
+
+        <div>
+            <p>
+                Let $P(w)$ be a predicate that depends on the integer variable $w$
+                and let $b$ be an integer.
+            </p>
+            <p>
+                Symbolically, mathematical induction is defined as follows:
+                \begin{align}
+                    &P(b)\\
+                    &\forall k \geq b, (P(k) \rightarrow P(k+1))\\
+                    &\therefore \forall n \geq b, P(n)
+                \end{align}
+            </p>
+            <p>
+                To show that $P(n)$ is true for <b>all integers</b> $n \geq b$, it suffices to do
+
+                <ol>
+                    <li>Basis Step: Verify $P(b)$ is true.</li>
+                    <li>Inductive Step: Show that for all $k \geq b$, the conditional
+                        <span style="color:red">$P(k) \rightarrow
+                       P(k+1)$</span> is true.
+
+                       <p>
+                            In proving (2), we must suppose $P(k)$ is true. This is called our <b>Induction Hypothesis</b>.
+                       </p>
+                    </li>
+                </ol>
+            </p>
+        </div>
+
+
+        <hr>
+
+        <p class="block">
+            <b>Summation Notation</b> is just shorthand notation for repeated
+            addition, sort of like a for loop.
+
+            \[ \sum_{i=0}^{n} i = 0 + 1 + 2 + 3 + \ldots + n \]
+
+            More generally,
+            \[ \sum_{j=i}^n j = i + (i+1) + (i+2) + \ldots + (n-2) + (n-1) + n \]
+        </p>
+
+        <hr>
+
+        <p>
+            <h3>Claim:</h3> For every positive integer $m$,
+            \[ \sum_{j=1}^{m} j = \frac{m(m+1)}{2} \]
+
+            <p>
+                It is impossible to prove this through brute force because
+                there are infinite positive integers. We need to use induction.
+            </p>
+            <p>
+                Informally:
+            </p>
+            <p>
+                Let $P(n)$ be the statement:
+                \[ \sum_{j=1}^n j = \frac{n(n+1)}{2} \]
+                <ol>
+                    <li>Show $P(1)$ is true</li>
+                    <li>Show that for all $k \geq 1$, $(P(k) \rightarrow P(k+1))$.
+                </ol>
+            </p>
+
+
+        </p>
+
+        <p>
+            <h3>Proof: (by mathematical induction)</h3>
+
+            <h4>Basis:</h4>
+            $P(1)$ is true because \[\sum_{i=1}^{1} i = 1 = \frac{1(1+1)}{2}\]
+
+            <h4>Inductive Step:</h4>
+
+            <p>
+                Suppose $k \geq 1$. For the inductive hypothesis, suppose $P(k)$ is true:
+                \[
+                    \sum_{j=1}^k j = \frac{k (k+1}{2}
+                \]
+            </p>
+
+            <p class="block">
+                We need to show $P(k+1)$ is true (what follows is NOT YET known to be true):
+                \[
+                    \sum _{j=1} ^ {k+1} j = \frac{(k + 1) (k + 1 + 1)}{2}
+                \]
+            </p>
+
+            <p>
+                We see that 
+                \begin{align}
+                    \sum_{j=1}^{k+1}j &= (\sum_{j=1}^k j) + (k+1) \\
+                    &= \frac{k(k+1)}{2} + (k+1) \tag{by def of $\sum$} \\
+                    &= \frac{k(k+1) + 2(k+1)}{2} \\
+                    &= \frac{(k+1)(k+2)}{2} = \frac{(k+1)(k+1+1)}{2}
+                \end{align}
+            </p>
+
+            <p>
+                Thus, by the basis, inductive step, and the principle of
+                mathematical induction (PMI), the claim is true.
+            </p>
+
+
+
+        </p>
+
+    </body>
+
+</html>
