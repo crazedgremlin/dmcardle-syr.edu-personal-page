@@ -1,0 +1,58 @@
+<html>
+    <head>
+        <!-- configure and load Mathjax -->
+        <script type="text/x-mathjax-config">
+          MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+        </script>
+        <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+        <link rel="stylesheet" type="text/css" href="../../css/main.css" />
+
+        <style>
+            .block {
+                border: 1px solid black;
+                padding: 1em 1em 1em 1em;
+                margin: 1em;
+            }
+        </style>
+    </head>
+
+    <body>
+
+        <h1>Practicing Induction</h1>
+
+        \begin{align}
+            &P(0)\\
+            &P(n)\to P(n+1)\\
+            &\therefore P(0) \wedge P(1) \wedge P(1) \wedge \ldots
+        \end{align}
+
+        <p>
+            If you can get from $P(n)$ to $P(n+1)$ for an arbitrary $n$, this
+            gives you a ladder. But we need to have some way to get onto the
+            ladder, i.e. the base case.  If we can start at 0 or 1 or some
+            other number, so we know $P(b)$ is true, then we know $P(k)$ is
+            true for any $k\geq b$.
+        </p>
+
+        <p>
+            <a href="http://www.cis.syr.edu/~sueo/cis275/writeups/inductionStructure.pdf">
+                Boilerplate for Inductive Proofs
+            </a>
+        </p>
+
+        <p>
+            Breaking up a summation into two pieces:
+            \[
+                \sum_{j=1}^{k+1} \star = \left(\sum_{j=1}^k \star \right) + \star_{j=k+1}
+            \]
+
+            For example:
+            \[
+                \sum_{j=1}^{k+1} j^2 = \left( \sum_{j=1}^k j^2 \right) + (k+1)^2
+            \]
+        </p>
+
+    </body>
+
+</html>
