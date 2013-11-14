@@ -1,0 +1,214 @@
+<html>
+    <head>
+        <!-- configure and load Mathjax -->
+        <script type="text/x-mathjax-config">
+          MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+        </script>
+        <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+        <link rel="stylesheet" type="text/css" href="../../css/main.css" />
+
+        <style>
+            .block {
+                border: 1px solid black;
+                padding: 1em 1em 1em 1em;
+                margin: 1em;
+            }
+            .proof {
+                padding-left: 1em;
+                margin-left: 0.5em;
+                border-left: 5px solid gray;
+            }
+        </style>
+    </head>
+
+    <body>
+
+        <h1>Countability</h1>
+        <div>
+            (on Exam 3)
+        </div>
+
+        <p>
+            <b>Definition</b>:  Two sets $A$ and $B$ have the <i>same
+            cardinality</i> if and only if there's a bijection (function that
+            is 1-1 and onto) from $A$ to $B$.
+        </p>
+
+        <p>
+            Example:
+
+            \begin{align}
+                \{a,b,c\} &amp;&amp; \{1,5,8\}\\
+                \\
+                \text{Look! A bijection:}\\
+                f(a) &amp;= 1\\
+                f(b) &amp;= 5\\
+                f(c) &amp;= 8
+            \end{align}
+
+            It's easy to tell if finite sets have the same cardinality.
+        </p>
+
+        <p>
+            But what about positive integers (beginning at 1) and natural numbers (beginning at 0). Do they have the same cardinality?
+            \begin{align}
+                \left|\mathbb{Z}^+\right| =^? \left|\mathbb{N}\right|
+            \end{align}
+         
+            Naive answer is "no," but you can create a bijection!
+
+            \begin{align}
+                f : \mathbb{Z}^+ \to \mathbb{N}\\
+                f(x) = x-1
+            \end{align}
+
+            So it turns out that they do have the same cardinality.
+        </p>
+
+
+        <p>
+            <b>Definition</b>:  A set is <i>countable</i> iff either (1) it is finite or (2) it has the same cardinality as $\mathbb{Z}^+$.
+        </p>
+        <p>
+            Examples of countable sets:
+            <ul>
+                <li>$\emptyset$ (it is finite)</li>
+                <li>$\{a,b,c\}$ (it is finite)</li>
+                <li>$\mathbb{Z}^+$ (simple bijection from $\mathbb{Z}^+$ to itself is $f(x)=x$</li>
+            </ul>
+        </p>
+
+        <p>
+            More countable sets:
+            <ol>
+                <li>
+                    \[ E^+ = \{ 2n \mid n \in \mathbb{Z}^+ \} \]
+
+                    Define $f : \mathbb{Z}^+ \to E^+$ by
+
+                    \[ f(x) = 2x \]
+
+                    $f$ is a bijection.
+                </li>
+
+
+                <li>
+                    Let $E$ be the set of ALL even numbers (not just positive).
+
+                    \begin{align}
+                        E &amp;= \{ 2n \mid n \in \mathbb{Z} \}\\
+                        \\[12pt]
+                        h &amp;: \mathbb{Z}^+ \to E\\
+                        h(w) &amp;= \cases{ w-1  &amp;  \text{if $w$ is odd} \cr -w   &amp;  \text{if $w$ is even}}
+                        \\[12pt]
+                        h(1) &amp;= 0\\
+                        h(2) &amp;= -2\\
+                        h(3) &amp;= 2\\
+                        h(4) &amp;= -4\\
+                        h(5) &amp;= 4\\
+                        \ldots
+                    \end{align}
+
+                </li>
+            </ol>
+        </p>
+
+        <p>
+            <b>Fact</b>: A set is countable iff its elements can be enumerated (i.e., listed in an ordered way)
+        </p>
+
+
+        <p>
+            <b>Claim</b> $\mathbb{Z}$ is countable
+            <br>
+            <b>Proof sketch</b>:
+            <p>
+                Its elements can be enumerated as $0, 1, -1, 2, -2, 3, 3, \ldots$
+            </p>
+        </p>
+        <p>
+            <b>Claim</b> $\mathbb{Z}^+ \times \mathbb{Z}^+$ is countable
+            <br>
+            <b>Proof sketch</b>:
+                It's possible to list out elements by creating a grid where
+                columns and rows are both labeled $1, 2, 3, \ldots$.  Each
+                entry in the table is a pair and you can follow the
+                increasingly-long diagonals. 
+        </p>
+        <p>
+            <b>Claim</b>: If $A$ and $B$ are countable, then $A\cup B$ is countable.
+        </p>
+        <p>
+            <b>Claim</b>: If $A$ and $B$ are countable, then $A\times B$ is countable.
+        </p>
+        <p>
+            <b>Claim</b>: Suppose $A \subseteq B$. If $B$ is countable, then $A$ is countable.
+            <br>
+            [<b>Corollary</b>: If $A$ is uncountable, then $B$ is uncountable.]
+        </p>
+
+        <hr>
+
+        <h2>How to Provide Convincing Evidence that an Infinite Set $X$ is Countable</h2>
+            
+        <ul>
+            <li>
+                Give a bijection between $X$ and a set we know is countable (e.g. $\mathbb{Z}$).
+            </li>
+            <li>
+                Give an enumeration strategy for $X$.
+            </li>
+            <li>
+                Show $X$ is a Subset of a Known Countable Set
+            </li>
+            <li>
+                Show $X$ is a union of countable sets.
+            </li>
+            <li>
+                Show $X$ is a product of countable sets.
+            </li>
+        </ul>
+
+
+        <hr>
+
+        <h2><span style="color:red">Diagonalization Proof</span></h2>
+    
+
+        <p>
+            <b>Claim</b>: The set $W = \{ r \in \mathbb{R} \mid 0 &lt; r &lt; 1 \}$ is uncountable.
+        </p>
+        <p>
+            Proof: (by Contradiction) <br>
+            Suppose $W$ is countable [NTS a contradiction] <br>
+            <br>
+            Then there is an enumeration for $W$:
+
+            \begin{align}
+                1 &amp; r_1 &amp;= 0 . \; d_{1,1} \; d_{1,2} \; d_{1,3} \ldots\\
+                2 &amp; r_2 &amp;= 0 . \; d_{2,1} \; d_{2,2} \; d_{2,3} \ldots\\
+                3 &amp; r_3 &amp;=
+            \end{align}
+
+            where each $d_{i,j} \in \{0, 1, 2, \ldots , 9\}$. 
+            <br>
+            <br>
+            Construct a new number \[ d = 0 . e_1\; e_2 \; e_3 \ldots\]
+            where \[e_i = \cases{ 4 &amp; \text{ if } d_{i,i} \neq 4 \cr 5 &amp; \text{ if } d_{i,i} = 4  }\]
+
+            Thus, $0 &lt; d &lt; 1$, so $d \in W$. We know $d$ is not the first
+            number because the first digit doesn't match. It's not the second
+            number either because the second digit doesn't match.  Et cetera...
+
+            <br>
+            <br>
+
+            Therefore, we have constructed a number that is not in the ordering
+            of all the numbers.  <b>Contradiction!</b>
+        </p>
+
+
+    </body>
+
+</html>
