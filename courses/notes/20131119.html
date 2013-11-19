@@ -1,0 +1,139 @@
+<html>
+    <head>
+        <!-- configure and load Mathjax -->
+        <script type="text/x-mathjax-config">
+          MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+        </script>
+        <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+        <link rel="stylesheet" type="text/css" href="../../css/main.css" />
+
+        <style>
+            .block {
+                border: 1px solid black;
+                padding: 1em 1em 1em 1em;
+                margin: 1em;
+            }
+            .proof {
+                padding-left: 1em;
+                margin-left: 0.5em;
+                border-left: 5px solid gray;
+            }
+        </style>
+    </head>
+
+    <body>
+
+        <h1>Induction Summary</h1>
+
+        <h2> Mathematical Induction</h2>
+
+        <p>
+        <b>Basis</b>: $$P(b)$$ [where $b$ is the lowest value you want to prove $P$ for]
+        </p>
+
+        <p>
+        <b>IS</b>:  \begin{align}
+            P(k) & \rightarrow & P(k+1)\\
+            \text{assume} & & \text{show}
+            \end{align}
+        </p>
+
+        <h2>Structural Induction</h2>
+
+        <p>
+            <b>Basis</b>: $$P(b)$$ [for every base element $b$]
+        </p>
+        <p>
+        <b>IS</b>:
+            \[
+                P(T_1) \wedge P(T_2) \rightarrow P(T_1 \star T_2)
+            \]
+        </p>
+
+
+        <hr>
+
+        <h1>Countability</h1>
+
+        <p>
+            <b>Countable</b>: finite or same cardinality as $\mathbb{Z}^+$
+        </p>
+
+        <p>
+            <b>Uncountable</b>: Not countable
+        </p>
+
+        <p>
+            Some countable sets:
+            $\mathbb{Z}^+$, $\mathbb{N}$, $\mathbb{Z}$, $\mathbb{Z}\times \mathbb{Z}$
+        </p>
+        <p>
+            Some uncountable sets:
+            $\{ r \in \mathbb{R} \mid 0 &lt; r &lt; 1 \}$,
+            $\mathbb{R}$,
+            $\mathcal{P}(\mathbb{N})$
+        </p>
+
+        <p>
+            <b>Ways to show set $X$ is countable</b>
+
+            <ul>
+                <li>Show $X$ is finite</li>
+                <li>Show there is a bijection between $X$ and any known countable set</li>
+                <li>Give an enumeration strategy for $X$ &mdash; basically giving an algorithm for listing all the elements in the set</li>
+                <li>Show $X$ is a subset of a known countable set</li>
+                <li>Show $X$ is the <i>union</i> or <i>cartesian product</i> of two countable sets</li>
+            </ul>
+        </p>
+
+        <p>
+            <b>Ways to show set $X$ is uncountable</b>
+
+            <ul>
+                <li><strike>Show $X$ is infinite</strike>. Simple counterexample proving this won't work: $\mathbb{Z}$ is countable and infinite.</li>
+                <li>Give bijection between $X$ and a known uncountable set</li>
+                <li>Show that a known uncountable set is a <b>subset of</b> $X$.  Be careful about the direction of the subset relationship!</li>
+                <li>Use a <b>Cantor-style diagonalization argument</b> tos how no enumeration of $X$ exists</li>
+            </ul>
+        </p>
+
+
+        <h2>Cantor-Style Diagonalization Proof</h2>
+        <p>
+            <b>Claim</b>: $\{ r \in \mathbb{R} \mid 0 &lt; r &lt 1 \}$ is uncountable.
+        </p>
+        <p>
+            <b>Proof</b>: (by contradiction) <br>
+            Suppose $W = \{ r \in \mathbb{R} \mid 0 &lt; r &lt 1 \}$ is countable.<br>
+            Because $W$ is countable, there is an enumeration of its elements
+            \[ r_1 \; r_2 \; r_3 \; r_4 \; \ldots \]
+        </p>
+        <p>
+            Each element $r_i \in W$ can be represented as a sequence of digits:
+
+            \begin{align}
+                r_1 = 0. \; d_{1,1} \; d_{1,2} \; d_{1,3} \; d_{1,4} \; \ldots \\
+                r_2 = 0. \; d_{2,1} \; d_{2,2} \; d_{2,3} \; d_{2,4} \; \ldots \\
+                r_3 = 0. \; d_{3,1} \; d_{3,2} \; d_{3,3} \; d_{3,4} \; \ldots \\
+            \end{align}
+
+            The $j$th digit of $r_i$ is $d_{i,j} \in \{ 0, 1, 2, \ldots, 9\}$
+        </p>
+
+        <p>
+            There is an element $w \in W$ defined by
+
+            \[
+                w = 0. \; e_1 \; e_2 \; e_3 \; e_4 \ldots
+            \]
+
+            where \[e_i = \cases{ 4 &amp; \text{ if } d_{i,i} \neq 4 \cr 5 &amp; \text{ if } d_{i,i} = 4  }\]
+        </p>
+        <p>
+            We know $w \neq r_1$ because they differ in the first digit. We also know $w \neq r_2$ because they differ in the second digit. And so on... Thus, $w$ is not any of the $r_i$ that appear in the enumeration. This means $w \in W$ and $w \not \in W$.  This is a contradiction!
+        </p>
+
+    </body>
+
+</html>
