@@ -1,0 +1,99 @@
+<html>
+    <head>
+        <!-- configure and load Mathjax -->
+        <script type="text/x-mathjax-config">
+          MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+        </script>
+        <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+        <link rel="stylesheet" type="text/css" href="../../css/main.css" />
+
+        <style>
+            .block {
+                border: 1px solid black;
+                padding: 1em 1em 1em 1em;
+                margin: 1em;
+            }
+            .proof {
+                padding-left: 1em;
+                margin-left: 0.5em;
+                border-left: 5px solid gray;
+            }
+            body > .proof {
+                margin-top:4em;
+            }
+        </style>
+    </head>
+
+    <body>
+
+        <div class="proof">
+            <p>
+                Set of functions from $\{1\}$ to $\mathbb{R}$.
+                \[ \{ f_r \mid r \in \mathbb{R} \text{ and } f_r(1) = r \} \]
+            </p>
+
+            <p>
+                To be a function, each input must be related to exactly one output.
+            </p>
+
+
+            <div class="proof">
+                <b>Example</b>
+                <p>
+                    Functions from $\{ 1 \}$ to $\{ a,b,c \}$.
+
+                    \[
+                        \left\{
+                         \{(1,a)\},
+                         \{(1,b)\},
+                         \{(1,c)\}
+                        \right\}
+                    \]
+                </p>
+
+            </div>
+
+            <p>
+                There is a bijection $f : \mathbb{R} \to X$ defined by
+                \[ f(r) = \{ (1,r) \} \]
+
+                Since $\mathbb{R}$ is uncountable, so is X.
+            </p>
+        </div>
+
+        <div class="proof">
+
+            <p>
+            Suppose $A$, $B$ are finite and $A$ has $m$ elements and $B$ has $n$ elements.
+            </p>
+
+            <p>
+                What is the size of $A\times B$?
+
+                \[ \left|A \times B\right| = \left|A\right| \times \left|B\right| \]
+            </p>
+        </div>
+
+        <div class="proof">
+            <p style="color:red">
+                The set $\mathbb{Q}$ of rational numbers is countable.
+            </p>
+            <p>
+                Every element of $\mathbb{Q}$ can be represented as a
+                $\frac{p}{q}$, where $p,q\in\mathbb{Z}$ and $q\neq 0$.
+                Therefore, there is a one-to-one correspondence between
+                $\mathbb{Q}$ and a subset of $\mathbb{Z}\times\mathbb{Z}$.
+            </p>
+            <p>
+                $\mathbb{R}$ is uncountable. Set of irrational numbers is
+                $\mathbb{R}\backslash\mathbb{Q}$. Since $\mathbb{Q}$ is
+                countable, the irrational numbers are uncountable.
+            </p>
+
+
+        </div>
+
+    </body>
+
+</html>
